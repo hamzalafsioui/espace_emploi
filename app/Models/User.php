@@ -49,5 +49,19 @@ class User extends Authenticatable
         ];
     }
 
-   
+    public function recruiter()
+    {
+        return $this->hasOne(Recruiter::class);
+    }
+
+    public function jobSeeker()
+    {
+        return $this->hasOne(JobSeeker::class);
+    }
+
+    public function friendshipsHelper()
+    {
+        
+        return $this->hasMany(Friendship::class, 'sender_id')->orWhere('receiver_id', $this->id);
+    }
 }
