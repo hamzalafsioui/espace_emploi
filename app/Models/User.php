@@ -61,7 +61,29 @@ class User extends Authenticatable
 
     public function friendshipsHelper()
     {
-        
+
         return $this->hasMany(Friendship::class, 'sender_id')->orWhere('receiver_id', $this->id);
+    }
+
+    /**
+     * Get the friendship record between this user and another user.
+     */
+    public function friendshipWith(User $user)
+    {
+        return Friendship::where(function ($q) use ($user) {
+            $q->where('sender_id', $this->id)->where('receiver_id', $user->id);
+        })->orWhere(function ($q) use ($user) {
+            $q->where('sender_id', $user->id)->where('receiver_id', $this->id);
+        })->first();
+    }
+
+    /**
+     * Accessor/retrieve for pending friendships count.
+     */
+    public function getPendingFriendshipsCountAttribute()
+    {
+        return Friendship::where('receiver_id', $this->id)
+            ->where('status', 'pending')
+            ->count();
     }
 }
