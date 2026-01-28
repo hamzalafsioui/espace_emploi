@@ -27,6 +27,19 @@ class ProfileUpdateRequest extends FormRequest
             ],
             'bio' => ['nullable', 'string', 'max:1000'],
             'photo' => ['nullable', 'image', 'max:2048'], // 2MB
+
+            // JobSeeker fields
+            'specialty' => ['nullable', 'string', 'max:255'],
+            'experience_level' => ['nullable', 'string', 'max:255'],
+            'skills' => ['nullable', 'string', 'max:1000'],
+            'cv_path' => ['nullable', 'file', 'mimes:pdf,doc,docx', 'max:5120'], // 5MB
+
+            // Recruiter fields
+            'company_name' => ['nullable', 'string', 'max:255'],
+            'company_size' => ['nullable', 'string', 'max:255'],
+            'industry' => ['nullable', 'string', 'max:255'],
+            'website' => ['nullable', 'url', 'max:255'],
+            'description' => ['nullable', 'string', 'max:1000'],
         ];
     }
 }
