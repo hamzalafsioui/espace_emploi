@@ -31,13 +31,15 @@
                                 </div>
                                 @endif
                                 <div>
-                                    <h3 class="font-bold">{{ $user->name }}</h3>
+                                    <h3 class="font-bold">
+                                        <a href="{{ route('profile.show', $user) }}" class="text-indigo-600 hover:underline">{{ $user->name }}</a>
+                                    </h3>
                                     <p class="text-sm text-gray-600">{{ ucfirst(str_replace('_', ' ', $user->user_type)) }}</p>
                                     @if($user->jobSeeker && $user->jobSeeker->specialty)
-                                    <p class="text-xs text-indigo-600">{{ $user->jobSeeker->specialty }}</p>
+                                    <p class="text-xs font-medium text-gray-500">{{ $user->jobSeeker->specialty }}</p>
                                     @endif
                                     @if($user->recruiter && $user->recruiter->company_name)
-                                    <p class="text-xs text-indigo-600">{{ $user->recruiter->company_name }}</p>
+                                    <p class="text-xs font-medium text-gray-500">{{ $user->recruiter->company_name }}</p>
                                     @endif
                                 </div>
                             </div>
