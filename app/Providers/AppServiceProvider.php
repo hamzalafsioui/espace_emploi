@@ -16,9 +16,10 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
+     * This method runs after all services are registered. -)
      */
     public function boot(): void
     {
-        //
+        view()->composer('layouts.navigation', \App\Http\View\Composers\FriendshipComposer::class);
     }
 }
