@@ -15,6 +15,15 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('search.index')" :active="request()->routeIs('search.index')">
+                        {{ __('Search') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('friendships.index')" :active="request()->routeIs('friendships.index')">
+                        {{ __('Friendships') }}
+                        @if($pendingFriendshipsCount > 0)
+                        <span class="ms-1 bg-red-100 text-red-600 text-xs font-bold px-1.5 py-0.5 rounded-full">{{ $pendingFriendshipsCount }}</span>
+                        @endif
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -43,7 +52,7 @@
                             @csrf
 
                             <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                                onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
@@ -70,6 +79,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('search.index')" :active="request()->routeIs('search.index')">
+                {{ __('Search') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('friendships.index')" :active="request()->routeIs('friendships.index')">
+                {{ __('Friendships') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -89,7 +104,7 @@
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                        onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
