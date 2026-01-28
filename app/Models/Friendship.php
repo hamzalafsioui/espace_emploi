@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Friendship extends Model
 {
@@ -20,5 +21,13 @@ class Friendship extends Model
     public function receiver()
     {
         return $this->belongsTo(User::class, 'receiver_id');
+    }
+
+    /**
+     * Get the other user in the friendship.
+     */
+    public function getOtherUserAttribute()
+    {
+        return $this->sender_id === Auth::id() ? $this->receiver : $this->sender;
     }
 }
