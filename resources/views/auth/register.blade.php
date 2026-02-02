@@ -13,7 +13,7 @@
         <!-- User Type -->
         <div class="mt-4">
             <x-input-label for="user_type" :value="__('User Type')" />
-            <select id="user_type" name="user_type" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+            <select id="user_type" name="user_type" class="block mt-1 w-full border-slate-200 focus:border-brand-primary focus:ring-brand-primary rounded-lg shadow-sm font-medium text-slate-800">
                 <option value="job_seeker">{{ __('Job Seeker') }}</option>
                 <option value="recruiter">{{ __('Recruiter') }}</option>
             </select>
@@ -51,7 +51,7 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+            <a class="underline text-sm text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary transition" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
 
