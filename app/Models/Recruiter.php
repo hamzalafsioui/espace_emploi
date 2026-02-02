@@ -19,4 +19,9 @@ class Recruiter extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function jobOffers()
+    {
+        return $this->hasMany(JobOffer::class);
+    }
 }
