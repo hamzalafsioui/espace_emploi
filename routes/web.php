@@ -28,6 +28,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/friendships', [FriendshipController::class, 'store'])->name('friendships.store');
     Route::patch('/friendships/{friendship}', [FriendshipController::class, 'update'])->name('friendships.update');
     Route::delete('/friendships/{friendship}', [FriendshipController::class, 'destroy'])->name('friendships.destroy');
+
+    // Job Seeker Profile
+    Route::get('/job-seeker/profile', [\App\Http\Controllers\JobSeekerProfileController::class, 'edit'])->name('job-seeker.profile.edit');
+    Route::patch('/job-seeker/profile', [\App\Http\Controllers\JobSeekerProfileController::class, 'update'])->name('job-seeker.profile.update');
 });
 
 require __DIR__ . '/auth.php';
