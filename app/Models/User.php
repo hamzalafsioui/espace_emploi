@@ -86,4 +86,28 @@ class User extends Authenticatable
             ->where('status', 'pending')
             ->count();
     }
+
+    /**
+     * Check if user has a specific role.
+     */
+    public function hasRole(string $role): bool
+    {
+        return $this->user_type === $role;
+    }
+
+    /**
+     * Check if user is a recruiter.
+     */
+    public function isRecruiter(): bool
+    {
+        return $this->user_type === 'recruiter';
+    }
+
+    /**
+     * Check if user is a job seeker.
+     */
+    public function isJobSeeker(): bool
+    {
+        return $this->user_type === 'job_seeker';
+    }
 }
