@@ -24,6 +24,12 @@
                         <span class="ms-1 bg-brand-accent/10 text-brand-accent text-xs font-bold px-1.5 py-0.5 rounded-full ring-1 ring-brand-accent/20">{{ $pendingFriendshipsCount }}</span>
                         @endif
                     </x-nav-link>
+
+                    @if(Auth::user()->user_type === 'job_seeker')
+                    <x-nav-link :href="route('job-seeker.profile.edit')" :active="request()->routeIs('job-seeker.profile.edit')" class="text-slate-600 hover:text-brand-primary active:text-brand-primary font-medium transition-colors duration-200">
+                        {{ __('My Resume') }}
+                    </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -85,6 +91,12 @@
             <x-responsive-nav-link :href="route('friendships.index')" :active="request()->routeIs('friendships.index')" class="text-slate-600 hover:text-brand-primary hover:bg-brand-light/50">
                 {{ __('Friendships') }}
             </x-responsive-nav-link>
+
+            @if(Auth::user()->user_type === 'job_seeker')
+            <x-responsive-nav-link :href="route('job-seeker.profile.edit')" :active="request()->routeIs('job-seeker.profile.edit')" class="text-slate-600 hover:text-brand-primary hover:bg-brand-light/50">
+                {{ __('My Resume') }}
+            </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
