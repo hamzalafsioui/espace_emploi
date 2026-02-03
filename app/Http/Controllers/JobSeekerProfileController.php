@@ -107,6 +107,36 @@ class JobSeekerProfileController extends Controller
      */
     private function syncRelation($relation, array $items): void
     {
-       
+        // Get the related model class name
+        $relatedModel = get_class($relation->getRelated());
+        $foreignKey = $relation->getForeignKeyName();
+        $parentId = $relation->getParentKey();
+
+        // Get existing IDs & submitted IDs
+        $existingIds = $relation->pluck('id')->toArray();
+        $submittedIds = collect($items)->pluck('id')->filter()->toArray();
+
+        // Delete removed items
+        $toDelete = array_diff($existingIds, $submittedIds);
+        if (!empty($toDelete)) {
+            $relatedModel::whereIn('id', $toDelete)->delete();
+        }
+
+        // Update or create items
+        foreach ($items as $item) {
+            // Remove id from item data
+            $itemData = collect($item)->except(['id'])->toArray();
+
+            if (!empty($item['id'])) {
+                // Update existing record
+                $relatedModel::where('id', $item['id'])
+                    ->where($foreignKey, $parentId)
+                    ->update($itemData);
+            } else {
+                // Create new record with foreign key
+                $itemData[$foreignKey] = $parentId;
+                $relatedModel::create($itemData);
+            }
+        }
     }
 }
