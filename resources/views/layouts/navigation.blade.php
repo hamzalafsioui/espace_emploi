@@ -26,8 +26,17 @@
                     </x-nav-link>
 
                     @if(Auth::user()->user_type === 'job_seeker')
+                    <x-nav-link :href="route('job-seeker.jobs.index')" :active="request()->routeIs('job-seeker.jobs.*')" class="text-slate-600 hover:text-brand-primary active:text-brand-primary font-medium transition-colors duration-200">
+                        {{ __('Browse Jobs') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('job-seeker.profile.edit')" :active="request()->routeIs('job-seeker.profile.edit')" class="text-slate-600 hover:text-brand-primary active:text-brand-primary font-medium transition-colors duration-200">
                         {{ __('My Resume') }}
+                    </x-nav-link>
+                    @endif
+
+                    @if(Auth::user()->isRecruiter())
+                    <x-nav-link :href="route('job-offers.index')" :active="request()->routeIs('job-offers.*')" class="text-slate-600 hover:text-brand-primary active:text-brand-primary font-medium transition-colors duration-200">
+                        {{ __('Manage Job Offers') }}
                     </x-nav-link>
                     @endif
                 </div>
@@ -93,8 +102,17 @@
             </x-responsive-nav-link>
 
             @if(Auth::user()->user_type === 'job_seeker')
+            <x-responsive-nav-link :href="route('job-seeker.jobs.index')" :active="request()->routeIs('job-seeker.jobs.*')" class="text-slate-600 hover:text-brand-primary hover:bg-brand-light/50">
+                {{ __('Browse Jobs') }}
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('job-seeker.profile.edit')" :active="request()->routeIs('job-seeker.profile.edit')" class="text-slate-600 hover:text-brand-primary hover:bg-brand-light/50">
                 {{ __('My Resume') }}
+            </x-responsive-nav-link>
+            @endif
+
+            @if(Auth::user()->isRecruiter())
+            <x-responsive-nav-link :href="route('job-offers.index')" :active="request()->routeIs('job-offers.*')" class="text-slate-600 hover:text-brand-primary hover:bg-brand-light/50">
+                {{ __('Manage Job Offers') }}
             </x-responsive-nav-link>
             @endif
         </div>
