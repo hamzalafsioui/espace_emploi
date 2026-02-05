@@ -43,9 +43,21 @@
 
                 <div class="flex items-center justify-between">
                     <span class="text-slate-400 text-xs">{{ $offer->created_at->diffForHumans() }}</span>
-                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded transition">
-                        View Details
-                    </a>
+                    <div class="flex space-x-2">
+                        @if(in_array($offer->id, $appliedJobIds))
+                        <span class="bg-green-100 text-green-700 text-sm font-bold py-2 px-4 rounded">
+                            Applied
+                        </span>
+                        @else
+                        <form action="{{ route('applications.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="job_offer_id" value="{{ $offer->id }}">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded transition">
+                                Apply
+                            </button>
+                        </form>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
