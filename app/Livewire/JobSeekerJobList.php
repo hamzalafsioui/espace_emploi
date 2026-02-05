@@ -13,6 +13,7 @@ class JobSeekerJobList extends Component
     public $step = 6;
     public $hasMore = true;
     public $search = '';
+    public $appliedJobIds = [];
 
     public function updatingSearch()
     {
@@ -42,6 +43,10 @@ class JobSeekerJobList extends Component
             ->get();
 
         $this->hasMore = $results->count() > $this->limit;
+
+        if (auth()->check() && auth()->user()->isJobSeeker() && auth()->user()->jobSeeker) {
+            $this->appliedJobIds = auth()->user()->jobSeeker->applications()->pluck('job_offer_id')->toArray();
+        }
 
         return view('livewire.job-seeker-job-list', [
             'jobOffers' => $results->take($this->limit),
