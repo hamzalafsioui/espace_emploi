@@ -6,11 +6,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -88,19 +89,11 @@ class User extends Authenticatable
     }
 
     /**
-     * Check if user has a specific role.
-     */
-    public function hasRole(string $role): bool
-    {
-        return $this->user_type === $role;
-    }
-
-    /**
      * Check if user is a recruiter.
      */
     public function isRecruiter(): bool
     {
-        return $this->user_type === 'recruiter';
+        return $this->hasRole('recruiter');
     }
 
     /**
@@ -108,6 +101,6 @@ class User extends Authenticatable
      */
     public function isJobSeeker(): bool
     {
-        return $this->user_type === 'job_seeker';
+        return $this->hasRole('job_seeker');
     }
 }
