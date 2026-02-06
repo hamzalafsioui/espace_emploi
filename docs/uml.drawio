@@ -1,22 +1,22 @@
 <mxfile host="65bd71144e">
     <diagram id="espace-emploi-visual" name="Class Diagram">
-        <mxGraphModel dx="960" dy="396" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1720" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="user_box" value="User&#xa;---&#xa;+ id: int&#xa;+ name: string&#xa;+ email: string&#xa;+ password: string&#xa;+ user_type: string&#xa;+ photo: string&#xa;+ bio: text&#xa;+ email_verified_at: timestamp&#xa;---&#xa;+ register()&#xa;+ login()&#xa;+ logout()&#xa;+ updateProfile()&#xa;+ changePassword()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="user_box" value="User&#xa;---&#xa;+ id: int&#xa;+ name: string&#xa;+ email: string&#xa;+ password: string&#xa;+ user_type: string&#xa;+ photo: string&#xa;+ bio: text&#xa;+ email_verified_at: timestamp&#xa;---&#xa;+ register()&#xa;+ login()&#xa;+ logout()&#xa;+ updateProfile()&#xa;+ changePassword()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="320" y="40" width="200" height="260" as="geometry"/>
                 </mxCell>
-                <mxCell id="recruiter_box" value="Recruiter&#xa;---&#xa;+ id: int&#xa;+ user_id: int&#xa;+ company_name: string&#xa;+ company_size: string&#xa;+ industry: string&#xa;+ website: string&#xa;+ description: text&#xa;---&#xa;+ getCompanyInfo()&#xa;+ updateCompanyInfo()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="recruiter_box" value="Recruiter&#xa;---&#xa;+ id: int&#xa;+ user_id: int&#xa;+ company_name: string&#xa;+ company_size: string&#xa;+ industry: string&#xa;+ website: string&#xa;+ description: text&#xa;---&#xa;+ getCompanyInfo()&#xa;+ updateCompanyInfo()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="40" y="360" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="job_seeker_box" value="JobSeeker&#xa;---&#xa;+ id: int&#xa;+ user_id: int&#xa;+ specialty: string&#xa;+ experience_level: string&#xa;+ skills: text&#xa;+ cv_path: string&#xa;---&#xa;+ getSpecialty()&#xa;+ uploadCV()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="600" y="360" width="200" height="200" as="geometry"/>
+                <mxCell id="job_seeker_box" value="JobSeeker&#xa;---&#xa;+ id: int&#xa;+ user_id: int&#xa;+ specialty: string&#xa;+ experience_level: string&#xa;+ skills: text&#xa;+ cv_path: string&#xa;---&#xa;+ getSpecialty()&#xa;+ uploadCV()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="670" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="friendship_box" value="Friendship&#xa;---&#xa;+ id: int&#xa;+ sender_id: int&#xa;+ receiver_id: int&#xa;+ status: string&#xa;---&#xa;+ sendRequest()&#xa;+ acceptRequest()&#xa;+ rejectRequest()&#xa;+ getFriends()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="friendship_box" value="Friendship&#xa;---&#xa;+ id: int&#xa;+ sender_id: int&#xa;+ receiver_id: int&#xa;+ status: string&#xa;---&#xa;+ sendRequest()&#xa;+ acceptRequest()&#xa;+ rejectRequest()&#xa;+ getFriends()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="320" y="600" width="200" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="user_recruiter_link" value="has" style="endArrow=block;endFill=0;endSize=12;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="user_box" target="recruiter_box" edge="1">
+                <mxCell id="user_recruiter_link" value="has" style="endArrow=block;endFill=0;endSize=12;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="user_box" target="recruiter_box">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="320" y="170" as="sourcePoint"/>
                         <mxPoint x="140" y="350" as="targetPoint"/>
@@ -25,13 +25,13 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="user_recruiter_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="user_recruiter_link" connectable="0" vertex="1">
+                <mxCell id="user_recruiter_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_recruiter_link">
                     <mxGeometry x="-0.8" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="recruiter_user_label" value="0..1" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" parent="user_recruiter_link" connectable="0" vertex="1">
+                <mxCell id="recruiter_user_label" value="0..1" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_recruiter_link">
                     <mxGeometry x="0.8" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="user_jobseeker_link" value="has" style="endArrow=block;endFill=0;endSize=12;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="user_box" target="job_seeker_box" edge="1">
+                <mxCell id="user_jobseeker_link" value="has" style="endArrow=block;endFill=0;endSize=12;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="user_box" target="job_seeker_box">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="520" y="170" as="sourcePoint"/>
                         <mxPoint x="700" y="350" as="targetPoint"/>
@@ -40,28 +40,107 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="user_jobseeker_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="user_jobseeker_link" connectable="0" vertex="1">
+                <mxCell id="user_jobseeker_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_jobseeker_link">
                     <mxGeometry x="-0.8" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="jobseeker_user_label" value="0..1" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" parent="user_jobseeker_link" connectable="0" vertex="1">
+                <mxCell id="jobseeker_user_label" value="0..1" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_jobseeker_link">
                     <mxGeometry x="0.8" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="user_sender_friendship" value="sender" style="endArrow=open;endFill=0;endSize=12;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="user_box" target="friendship_box" edge="1">
+                <mxCell id="user_sender_friendship" value="sender" style="endArrow=none;endFill=0;endSize=12;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="user_box" target="friendship_box">
                     <mxGeometry width="160" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="user_sender_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="user_sender_friendship" connectable="0" vertex="1">
+                <mxCell id="user_sender_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_sender_friendship">
                     <mxGeometry x="-0.8" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="sender_user_label" value="*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" parent="user_sender_friendship" connectable="0" vertex="1">
+                <mxCell id="sender_user_label" value="*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_sender_friendship">
                     <mxGeometry x="0.8" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="user_receiver_friendship" value="receiver" style="endArrow=open;endFill=0;endSize=12;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="user_box" target="friendship_box" edge="1">
+                <mxCell id="user_receiver_friendship" value="receiver" style="endArrow=none;endFill=0;endSize=12;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="user_box" target="friendship_box">
                     <mxGeometry width="160" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="user_receiver_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="user_receiver_friendship" connectable="0" vertex="1">
+                <mxCell id="user_receiver_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_receiver_friendship">
                     <mxGeometry x="-0.8" relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="receiver_user_label" value="*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" parent="user_receiver_friendship" connectable="0" vertex="1">
+                <mxCell id="receiver_user_label" value="*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_receiver_friendship">
+                    <mxGeometry x="0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="education_box" value="Education&#xa;---&#xa;+ id: int&#xa;+ school: string&#xa;+ degree: string&#xa;+ field_of_study: string&#xa;+ start_date: date&#xa;+ end_date: date&#xa;+ description: text" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="870" y="80" width="200" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="experience_box" value="Experience&#xa;---&#xa;+ id: int&#xa;+ position: string&#xa;+ company_name: string&#xa;+ location: string&#xa;+ start_date: date&#xa;+ end_date: date&#xa;+ description: text" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1220" y="50" width="200" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="skill_box" value="Skill&#xa;---&#xa;+ id: int&#xa;+ name: string" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1060" y="340" width="200" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="job_offer_box" value="JobOffer&#xa;---&#xa;+ id: int&#xa;+ recruiter_id: int&#xa;+ title: string&#xa;+ description: text&#xa;+ company_name: string&#xa;+ location: string&#xa;+ contract_type: string&#xa;+ image_path: string&#xa;+ status: string" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="690" width="200" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="user_education_link" value="has" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="user_box" target="education_box">
+                    <mxGeometry width="160" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="user_education_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_education_link">
+                    <mxGeometry x="-0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="education_user_label" value="0..*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_education_link">
+                    <mxGeometry x="0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="user_experience_link" value="has" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;exitX=1;exitY=0.1;exitDx=0;exitDy=0;entryX=0;entryY=0.1;entryDx=0;entryDy=0;" edge="1" parent="1" source="user_box" target="experience_box">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="550" y="66"/>
+                            <mxPoint x="790" y="66"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="user_experience_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_experience_link">
+                    <mxGeometry x="-0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="experience_user_label" value="0..*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_experience_link">
+                    <mxGeometry x="0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="user_skill_link" value="knows" style="endArrow=none;html=1;exitX=0.9;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="user_box" target="skill_box">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="340"/>
+                            <mxPoint x="950" y="340"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="user_skill_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_skill_link">
+                    <mxGeometry x="-0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="skill_user_label" value="0..*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="user_skill_link">
+                    <mxGeometry x="0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="recruiter_joboffer_link" value="posts" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="recruiter_box" target="job_offer_box">
+                    <mxGeometry width="160" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="recruiter_joboffer_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="recruiter_joboffer_link">
+                    <mxGeometry x="-0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="joboffer_recruiter_label" value="0..*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="recruiter_joboffer_link">
+                    <mxGeometry x="0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="application_box" value="Application&#xa;---&#xa;+ id: int&#xa;+ job_offer_id: int&#xa;+ job_seeker_id: int&#xa;+ status: string&#xa;+ message: text" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="920" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="jobseeker_application_link" value="applies" style="endArrow=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="job_seeker_box" target="application_box">
+                    <mxGeometry width="160" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="jobseeker_application_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="jobseeker_application_link">
+                    <mxGeometry x="-0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="application_jobseeker_label" value="0..*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="jobseeker_application_link">
+                    <mxGeometry x="0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="joboffer_application_link" value="receives" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="job_offer_box" target="application_box">
+                    <mxGeometry width="160" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="joboffer_application_label" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="joboffer_application_link">
+                    <mxGeometry x="-0.8" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="application_joboffer_label" value="0..*" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="joboffer_application_link">
                     <mxGeometry x="0.8" relative="1" as="geometry"/>
                 </mxCell>
             </root>
